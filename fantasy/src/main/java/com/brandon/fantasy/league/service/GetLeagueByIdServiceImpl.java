@@ -7,15 +7,15 @@ import org.springframework.stereotype.Service;
 
 
 @Service
-public class GetLeagueByIdService {
+public class GetLeagueByIdServiceImpl {
 
     private LeagueRepository repository;
 
-    public GetLeagueByIdService(LeagueRepository repository) {
+    public GetLeagueByIdServiceImpl(LeagueRepository repository) {
         this.repository = repository;
     }
 
-    public League findById(Integer id){
+    public League findById(Integer id) {
         return repository.findById(id)
                 .orElseThrow(() -> new LeagueExceptionHandler("The Appointment doesn't Exist"));
     }

@@ -2,7 +2,7 @@ package com.brandon.fantasy.service;
 
 import com.brandon.fantasy.league.entity.League;
 import com.brandon.fantasy.league.repository.LeagueRepository;
-import com.brandon.fantasy.league.service.CreateLeagueService;
+import com.brandon.fantasy.league.service.CreateLeagueServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -17,7 +17,7 @@ public class CreateServiceImplTest {
     private LeagueRepository leagueRepository;
 
     @InjectMocks
-    private CreateLeagueService createLeagueService;
+    private CreateLeagueServiceImpl createLeagueServiceImpl;
 
 
     @Test
@@ -26,7 +26,7 @@ public class CreateServiceImplTest {
 
         when(leagueRepository.save(league)).thenReturn(league);
 
-        League savedLeague = createLeagueService.save(league);
+        League savedLeague = createLeagueServiceImpl.save(league);
 
         verify(leagueRepository).save(league);
         assertEquals(league, savedLeague);

@@ -3,8 +3,7 @@ package com.brandon.fantasy.service;
 import com.brandon.fantasy.league.entity.League;
 import com.brandon.fantasy.league.exception.LeagueExceptionHandler;
 import com.brandon.fantasy.league.repository.LeagueRepository;
-import com.brandon.fantasy.league.service.GetLeagueByIdService;
-import org.junit.jupiter.api.Assertions;
+import com.brandon.fantasy.league.service.GetLeagueByIdServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -15,19 +14,20 @@ import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
-public class GetLeagueByIdServiceTest {
+public class GetLeagueByIdServiceImplTest {
 
     @Mock
     private LeagueRepository repository;
 
     @InjectMocks
-    private GetLeagueByIdService service;
+    private GetLeagueByIdServiceImpl service;
 
     @Test
-    void Get_ValidLeague_ReturnLeagueById(){
+    void Get_ValidLeague_ReturnLeagueById() {
         int id = 1;
         League league = new League();
         league.setId(id);

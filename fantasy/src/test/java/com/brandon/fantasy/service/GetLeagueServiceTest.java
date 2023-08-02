@@ -3,7 +3,7 @@ package com.brandon.fantasy.service;
 
 import com.brandon.fantasy.league.entity.League;
 import com.brandon.fantasy.league.repository.LeagueRepository;
-import com.brandon.fantasy.league.service.GetLeaguesService;
+import com.brandon.fantasy.league.service.GetLeaguesServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -21,7 +21,7 @@ import static org.mockito.Mockito.when;
 public class GetLeagueServiceTest {
 
     @InjectMocks
-    private GetLeaguesService leaguesService;
+    private GetLeaguesServiceImpl leaguesService;
 
     @Mock
     private LeagueRepository repository;

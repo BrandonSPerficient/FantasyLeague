@@ -1,9 +1,7 @@
 package com.brandon.fantasy.league.controller;
 
 import com.brandon.fantasy.league.entity.League;
-import com.brandon.fantasy.league.service.GetLeaguesService;
-import org.apache.coyote.Response;
-import org.hibernate.engine.spi.Resolution;
+import com.brandon.fantasy.league.service.GetLeaguesServiceImpl;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,11 +13,11 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/v1")
 public class GetLeaguesController {
-    public GetLeaguesController(GetLeaguesService leaguesService) {
+    private GetLeaguesServiceImpl leaguesService;
+
+    public GetLeaguesController(GetLeaguesServiceImpl leaguesService) {
         this.leaguesService = leaguesService;
     }
-    private GetLeaguesService leaguesService;
-
 
     @GetMapping("/leagues")
     public ResponseEntity<List<League>> retrieveAllLeagues() {

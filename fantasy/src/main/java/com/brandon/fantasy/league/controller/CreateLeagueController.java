@@ -1,7 +1,7 @@
 package com.brandon.fantasy.league.controller;
 
 import com.brandon.fantasy.league.entity.League;
-import com.brandon.fantasy.league.service.CreateLeagueService;
+import com.brandon.fantasy.league.service.CreateLeagueServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,11 +14,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/v1")
 public class CreateLeagueController {
     @Autowired
-    private CreateLeagueService createLeagueService;
+    private CreateLeagueServiceImpl createLeagueServiceImpl;
 
     @PostMapping("/leagues")
     public ResponseEntity<League> CreateLeague(@RequestBody League league) {
-        createLeagueService.save(league);
+        createLeagueServiceImpl.save(league);
         return ResponseEntity.status(HttpStatus.CREATED).body(league);
     }
 }

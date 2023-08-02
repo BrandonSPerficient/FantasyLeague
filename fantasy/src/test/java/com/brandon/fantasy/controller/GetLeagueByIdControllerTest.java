@@ -2,10 +2,8 @@ package com.brandon.fantasy.controller;
 
 
 import com.brandon.fantasy.league.controller.GetLeagueByIdController;
-import com.brandon.fantasy.league.controller.GetLeaguesController;
 import com.brandon.fantasy.league.entity.League;
-import com.brandon.fantasy.league.service.GetLeagueByIdService;
-import com.brandon.fantasy.league.service.GetLeaguesService;
+import com.brandon.fantasy.league.service.GetLeagueByIdServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -24,10 +22,10 @@ public class GetLeagueByIdControllerTest {
     private GetLeagueByIdController leagueByIdController;
 
     @Mock
-    private GetLeagueByIdService leagueByIdService;
+    private GetLeagueByIdServiceImpl leagueByIdService;
 
     @Test
-    void retrieveLeague_ValidId_ReturnsLeague(){
+    void retrieveLeague_ValidId_ReturnsLeague() {
         int id = 1;
         League league = new League();
         league.setId(id);
