@@ -21,9 +21,9 @@ public class League {
     private Integer id;
     private String name;
     private Boolean ppr;
-    @Size(min = 8, max = 12)
     private Integer numberOfTeams;
     private LocalDate creationDate;
+    //create league commissioner... league belongs to user
 
 
 }
