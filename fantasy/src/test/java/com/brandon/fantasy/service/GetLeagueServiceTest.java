@@ -27,7 +27,7 @@ public class GetLeagueServiceTest {
     private LeagueRepository repository;
 
     @Test
-    void retrieveAlLeagues_ReturnAllLeagues(){
+    void retrieveAlLeagues_ReturnAllLeagues() {
         List<League> leagueList = new ArrayList<>();
         leagueList.add(new League(1, "Brandon's League", Boolean.TRUE, 10, LocalDate.now()));
         leagueList.add(new League(1, "Fantasy Football League", Boolean.FALSE, 10, LocalDate.now()));

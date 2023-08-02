@@ -21,9 +21,8 @@ public class GetLeaguesController {
     private GetLeaguesService leaguesService;
 
 
-
     @GetMapping("/leagues")
-    public ResponseEntity<List<League>> retrieveAllLeagues(){
+    public ResponseEntity<List<League>> retrieveAllLeagues() {
         List<League> leagues = leaguesService.retrieveAllLeagues();
         return ResponseEntity.status(HttpStatus.OK).body(leagues);
     }
